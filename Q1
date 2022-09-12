@@ -1,0 +1,55 @@
+
+package TEST;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+
+// Java program to demonstrate
+// ArithmeticException
+class ArithmeticException_Demo {
+    public static void main(String args[])
+    {
+        try {
+            int a = 30, b = 0;
+            int c = a / b; // cannot divide by zero
+            System.out.println("Result = " + c);
+        }
+        catch (ArithmeticException e) {
+            System.out.println("Can't divide a number by 0");
+        }
+    }
+}
+
+class ArrayIndexOutOfBound_Demo {
+    public static void main(String args[])
+    {
+        try {
+            int a[] = new int[5];
+            a[6] = 9; // accessing 7th element in an array of
+            // size 5
+            System.out.println("Array Index is in bound");
+
+        }
+        catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Array Index is Out Of Bounds");
+        }
+    }
+}
+
+
+class File_notFound_Demo {
+
+    public static void main(String args[])
+    {
+        try {
+
+            // Following file does not exist
+            File file = new File("E:// file.txt");
+
+            FileReader fr = new FileReader(file);
+        }
+        catch (FileNotFoundException e) {
+            System.out.println("File does not exist");
+        }
+    }
+}
